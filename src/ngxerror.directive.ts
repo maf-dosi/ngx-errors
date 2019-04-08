@@ -28,6 +28,12 @@ export class NgxErrorDirective implements OnInit, OnDestroy, DoCheck {
     this.rules = toArray(value);
   }
 
+  @Input()
+  set forceCheck(value: boolean) {
+    this.forceRule = value;
+  }
+
+
   @HostBinding('hidden') private hidden: boolean = true;
 
   private rules: string[] = [];
@@ -35,6 +41,7 @@ export class NgxErrorDirective implements OnInit, OnDestroy, DoCheck {
   private subscription: Subscription;
   private _states$: Subject<string[]>;
   private states$: Observable<string[]>;
+  private forceRule: boolean;
 
   constructor(
     @Inject(forwardRef(() => NgxErrorsDirective))
@@ -63,7 +70,7 @@ export class NgxErrorDirective implements OnInit, OnDestroy, DoCheck {
 
   ngDoCheck() {
     this._states$.next(
-      this.rules.filter(rule => (this.ngxErrors.control as any)[rule])
+      this.rules.filter(rule => (this.ngxErrors.control as any)[rule] || this.forceRule)
     );
   }
 
