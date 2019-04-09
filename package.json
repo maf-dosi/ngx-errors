@@ -5,10 +5,9 @@
   "author": "MAF DOSI",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/hackages/ngx-errors.git",
+    "url": "https://github.com/maf-dosi/ngx-errors.git",
     "type": "git"
   },
-  "main": "./dist/main.js",
   "scripts": {
     "build": "npm run clean && npm run copy && npm run compile",
     "clean": "rimraf dist && mkdir dist",

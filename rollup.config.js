@@ -3,7 +3,7 @@ export default {
   moduleContext:'window',
   input: 'dist/index.js',
   output: {
-    file: 'dist/bundle/hackages.ngxerrors.umd.js',
+    file: 'dist/bundle/maf-dosi.ngxerrors.umd.js',
     format: 'umd',
     name: 'ngxerrors',
     sourcemap: true,
