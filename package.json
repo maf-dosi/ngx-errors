@@ -8,6 +8,7 @@
     "url": "https://github.com/hackages/ngx-errors.git",
     "type": "git"
   },
+  "main": "./dist/main.js",
   "scripts": {
     "build": "npm run clean && npm run copy && npm run compile",
     "clean": "rimraf dist && mkdir dist",
