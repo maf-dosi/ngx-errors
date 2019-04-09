@@ -1,22 +1,22 @@
 {
-  "name": "@hackages/ngxerrors",
+  "name": "@maf-dosi/ngxerrors",
   "version": "6.0.4",
   "description": "A declarative validation module for reactive forms forked from UltimateAngular/ngx-errors",
-  "author": "Hackages",
+  "author": "MAF DOSI",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/hackages/ngx-errors.git",
     "type": "git"
   },
   "scripts": {
-    "build": "yarn run clean && yarn run copy && yarn run compile",
-    "clean": "rimraf dist && mkdir -p dist",
-    "compile": "yarn run ngc && yarn run rollup",
+    "build": "npm run clean && npm run copy && npm run compile",
+    "clean": "rimraf dist && mkdir dist",
+    "compile": "npm run ngc && npm run rollup",
     "copy": "cp src/package.json dist/package.json && cp README.md dist/README.md",
     "example": "webpack-dev-server --inline --hot",
-    "prestart": "yarn run clean && yarn run copy",
-    "start": "nodemon --exec yarn run compile -e ts --watch src",
-    "rollup": "rollup -c rollup.config.js >/dev/null 2>&1",
+    "prestart": "npm run clean && npm run copy",
+    "start": "nodemon --exec compile -e ts --watch src",
+    "rollup": "rollup -c rollup.config.js 2>&1",
     "ngc": "ngc -p tsconfig.json",
     "test": "karma start --single-run",
     "test:watch": "karma start"
